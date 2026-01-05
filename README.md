@@ -14,6 +14,7 @@ Covered Challenges
 - Clean and well-organized Git repository structure
 - Clear and concise README.md
 - Decision tracking and architectural documentation
+  
 2.Dockerization of Spring Boot
 - Multi-stage Docker build
 - Optimized runtime image
