@@ -20,16 +20,19 @@ Covered Challenges
 - Optimized runtime image
 - Application runs as a non-root user
 - Ready for container-based deployment
+
 3.Docker Compose + MySQL + Monitoring
 - Orchestrated services using docker-compose
 - MySQL database with persistent volume
 - Dedicated Docker network for service isolation
 - Basic observability support (via application endpoints)
+  
 4.Optimization & Security
 - Identification of key production risks
 - Non-root container execution
 - Recommendations for secret management
 - Suggested improvements for production readiness
+  
 5.Sanction Bypass Script
 - Interactive CLI script for DNS/proxy configuration simulation
 - Supports service selection via menu
