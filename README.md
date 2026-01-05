@@ -47,5 +47,6 @@ The goal of this assessment is to demonstrate practical DevOps skills, including
 
 Usage Notes
 Before running the sanction bypass script, make it executable:
+
 chmod +x infra/scripts/sanction-bypass.sh
 
