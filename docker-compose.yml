@@ -1,0 +1,47 @@
+version: "3.9"
+
+networks:
+  food-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: foodbot
+      MYSQL_USER: foodbot
+      MYSQL_PASSWORD: foodbot_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - food-net
+    ports:
+      - "3306:3306"
+
+  food_bot:
+    build: .
+    container_name: food_bot
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/foodbot
+      SPRING_DATASOURCE_USERNAME: foodbot
+      SPRING_DATASOURCE_PASSWORD: foodbot_pass
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,metrics
+    ports:
+      - "8080:8080"
+    networks:
+      - food-net
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.5"
+
