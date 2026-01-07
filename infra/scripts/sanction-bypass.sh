@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# ===============================
+
 # Sanction Bypass Configurator
-# Author: <Your Name>
-# ===============================
+
 
 set -e
 
