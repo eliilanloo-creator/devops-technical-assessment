@@ -26,7 +26,9 @@ Recommended Improvements
 
 Identified Risks
 1.Secrets or credentials may be exposed if not managed securely
+
 2.Risk of data loss due to missing automated database backups
+
 3.Limited observability without centralized logging and metrics
 
 
