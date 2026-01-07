@@ -19,17 +19,16 @@ unexplained decisions.
 # Challenge 2 – Dockerization Decisions
 
 ## Base Image Selection
-- Maven image used for build stage to compile the application
-- JRE image used for runtime to reduce image size
+- A Maven-based image was used in the build stage to compile the Spring Boot application.
+- A lightweight JRE-only image was selected for the runtime stage to minimize the final image size.
 
 ## Multi-Stage Build
-Multi-stage build was implemented to separate build-time and runtime
-dependencies and produce a smaller final image.
-
+- A multi-stage Docker build was implemented to clearly separate build-time and runtime dependencies.
+- This approach reduces the final image size and removes unnecessary build tools from the runtime image.
 ## Security Considerations
-- Application runs as a non-root user
-- No credentials or secrets are hardcoded
-- Configuration is expected via environment variables
+- The application runs as a non-root user inside the container.
+- No credentials or secrets are hardcoded in the Docker image.
+- All configuration is provided via environment variables, making the image environment-agnostic and secure.
 
 # Challenge 3 – Orchestration & Monitoring Decisions
 
@@ -68,6 +67,8 @@ Basic CPU and memory limits were applied to demonstrate production awareness.
 ## Extensibility
 - DNS services are defined separately for easy extension
 - Custom DNS option allows flexibility without code changes
+
+
 
 
 
